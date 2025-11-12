@@ -1,0 +1,36 @@
+CREATE TABLE IF NOT EXISTS stockEntity (
+    id TEXT NOT NULL PRIMARY KEY,
+    produitId TEXT NOT NULL,
+    quantite REAL NOT NULL,
+    quantiteMin REAL NOT NULL,
+    quantiteMax REAL,
+    emplacement TEXT,
+    derniereEntree TEXT,
+    derniereSortie TEXT,
+    createdAt TEXT NOT NULL,
+    updatedAt TEXT
+);
+
+selectAll:
+SELECT * FROM stockEntity;
+
+selectById:
+SELECT * FROM stockEntity WHERE id = ?;
+
+selectByProduit:
+SELECT * FROM stockEntity WHERE produitId = ?;
+
+selectLowStock:
+SELECT * FROM stockEntity WHERE quantite <= quantiteMin;
+
+insert:
+INSERT OR REPLACE INTO stockEntity(id, produitId, quantite, quantiteMin, quantiteMax, emplacement, derniereEntree, derniereSortie, createdAt, updatedAt)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+
+update:
+UPDATE stockEntity
+SET quantite = ?, quantiteMin = ?, quantiteMax = ?, emplacement = ?, derniereEntree = ?, derniereSortie = ?, updatedAt = ?
+WHERE id = ?;
+
+delete:
+DELETE FROM stockEntity WHERE id = ?;

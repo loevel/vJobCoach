@@ -1,0 +1,34 @@
+CREATE TABLE IF NOT EXISTS clientEntity (
+    id TEXT NOT NULL PRIMARY KEY,
+    nom TEXT NOT NULL,
+    prenom TEXT,
+    telephone TEXT NOT NULL,
+    email TEXT,
+    adresse TEXT,
+    ville TEXT,
+    limiteCredit REAL,
+    actif INTEGER NOT NULL DEFAULT 1,
+    createdAt TEXT NOT NULL,
+    updatedAt TEXT
+);
+
+selectAll:
+SELECT * FROM clientEntity WHERE actif = 1;
+
+selectById:
+SELECT * FROM clientEntity WHERE id = ?;
+
+insert:
+INSERT OR REPLACE INTO clientEntity(id, nom, prenom, telephone, email, adresse, ville, limiteCredit, actif, createdAt, updatedAt)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+
+update:
+UPDATE clientEntity
+SET nom = ?, prenom = ?, telephone = ?, email = ?, adresse = ?, ville = ?, limiteCredit = ?, updatedAt = ?
+WHERE id = ?;
+
+delete:
+DELETE FROM clientEntity WHERE id = ?;
+
+search:
+SELECT * FROM clientEntity WHERE (nom LIKE '%' || ? || '%' OR telephone LIKE '%' || ? || '%') AND actif = 1;

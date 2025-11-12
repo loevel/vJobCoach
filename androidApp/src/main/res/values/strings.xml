@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Barsite</string>
+    
+    <!-- Auth Screen -->
+    <string name="login">Se connecter</string>
+    <string name="signup">S\'inscrire</string>
+    <string name="email">Email</string>
+    <string name="password">Mot de passe</string>
+    <string name="nom">Nom</string>
+    <string name="prenom">Prénom</string>
+    <string name="forgot_password">Mot de passe oublié?</string>
+    <string name="no_account">Pas de compte?</string>
+    <string name="already_have_account">Déjà un compte?</string>
+    
+    <!-- Dashboard -->
+    <string name="dashboard">Tableau de bord</string>
+    <string name="sales">Ventes</string>
+    <string name="products">Produits</string>
+    <string name="clients">Clients</string>
+    <string name="stock">Stock</string>
+    <string name="reports">Rapports</string>
+    
+    <!-- Sales -->
+    <string name="new_sale">Nouvelle vente</string>
+    <string name="add_product">Ajouter produit</string>
+    <string name="total">Total</string>
+    <string name="validate_sale">Valider la vente</string>
+    <string name="quantity">Quantité</string>
+    <string name="unit_price">Prix unitaire</string>
+    
+    <!-- Common -->
+    <string name="save">Enregistrer</string>
+    <string name="cancel">Annuler</string>
+    <string name="delete">Supprimer</string>
+    <string name="edit">Modifier</string>
+    <string name="search">Rechercher</string>
+    <string name="logout">Déconnexion</string>
+</resources>

@@ -1,0 +1,38 @@
+CREATE TABLE IF NOT EXISTS produitEntity (
+    id TEXT NOT NULL PRIMARY KEY,
+    nom TEXT NOT NULL,
+    description TEXT,
+    categorie TEXT NOT NULL,
+    prixVente REAL NOT NULL,
+    prixAchat REAL NOT NULL,
+    unite TEXT NOT NULL,
+    codeBarres TEXT,
+    imageUrl TEXT,
+    actif INTEGER NOT NULL DEFAULT 1,
+    createdAt TEXT NOT NULL,
+    updatedAt TEXT
+);
+
+selectAll:
+SELECT * FROM produitEntity WHERE actif = 1;
+
+selectById:
+SELECT * FROM produitEntity WHERE id = ?;
+
+selectByCategorie:
+SELECT * FROM produitEntity WHERE categorie = ? AND actif = 1;
+
+insert:
+INSERT OR REPLACE INTO produitEntity(id, nom, description, categorie, prixVente, prixAchat, unite, codeBarres, imageUrl, actif, createdAt, updatedAt)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+
+update:
+UPDATE produitEntity
+SET nom = ?, description = ?, categorie = ?, prixVente = ?, prixAchat = ?, unite = ?, codeBarres = ?, imageUrl = ?, updatedAt = ?
+WHERE id = ?;
+
+delete:
+DELETE FROM produitEntity WHERE id = ?;
+
+search:
+SELECT * FROM produitEntity WHERE nom LIKE '%' || ? || '%' AND actif = 1;

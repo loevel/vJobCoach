@@ -1,9 +1,9 @@
 plugins {
-    alias(libs.plugins.androidApplication)
-    alias(libs.plugins.kotlinAndroid)
-    alias(libs.plugins.kotlinCompose)
-    alias(libs.plugins.hilt)
+    id("com.android.application")
+    kotlin("android")
+    kotlin("plugin.compose")
     kotlin("kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
